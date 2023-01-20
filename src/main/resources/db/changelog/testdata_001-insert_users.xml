@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.2.xsd">
+
+    <property name="now" value="CURRENT_DATE" dbms="h2"/>
+
+    <changeSet id="testdata_001-insert_users" author="mszekalski">
+        <insert tableName="user_custom">
+            <column name="first_name" value="Brajan"/>
+            <column name="last_name" value="Trąbka"/>
+            <column name="birth_date" valueDate="${now}"/>
+        </insert>
+
+        <insert tableName="user_custom">
+            <column name="first_name" value="Adam"/>
+            <column name="last_name" value="Adamowski"/>
+            <column name="birth_date" value="1975-02-25"/>
+        </insert>
+
+        <insert tableName="user_custom">
+            <column name="first_name" value="Agata"/>
+            <column name="last_name" value="Nowakowska"/>
+            <column name="birth_date" value="1991-11-12"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
